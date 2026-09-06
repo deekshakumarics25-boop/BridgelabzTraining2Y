@@ -1,0 +1,96 @@
+Pseudocode and Flowchart Answers
+
+SECTION 1: PSEUDOCODE PROBLEMS
+
+PC-1: Prime Number Checker
+
+ PrimeNumberChecker
+    INPUT N
+
+    Set isPrime = TRUE
+
+    FOR i = 2 TO sqrt(N)
+        IF N MOD i = 0 THEN
+            Set isPrime = FALSE
+            BREAK
+        END IF
+    END FOR
+
+    IF isPrime = TRUE THEN
+        OUTPUT "Prime"
+    ELSE
+        OUTPUT "Not Prime"
+    END IF
+End 
+
+PC-2: Number Digit Reversal
+
+ ReverseNumber
+    INPUT N
+
+    Set reversed = 0
+
+    WHILE N > 0
+        digit = N MOD 10
+        reversed = reversed * 10 + digit
+        N = N / 10     
+    END WHILE
+
+    OUTPUT reversed
+End
+
+SECTION 2: FLOWCHART PROBLEMS
+
+FC-1: Prime Number Flowchart
+
+START 
+    |
+    v
+INPUT N 
+    |
+    v
+isPrime = TRUE, i = 2 
+    |
+    v
+i <= sqrt(N)? 
+   / \
+ No   Yes
+ |     |
+ v     v
+PRINT  N MOD i == 0? 
+Prime     / \
+ |       Yes  No
+ v        |    |
+STOP      v    v
+       isPrime = FALSE
+          |
+          v
+         STOP
+
+
+
+FC-2: Number Digit Reversal Flowchart
+
+START (Terminal)
+    |
+    v
+INPUT N (Input/Output)
+    |
+    v
+reversed = 0 
+    |
+    v
+N > 0?
+   / \
+ No   Yes
+ |     |
+ v     v
+PRINT  digit = N MOD 10
+reversed   |
+ |         v
+ v      reversed = reversed * 10 + digit
+STOP       |
+           v
+        N = N / 10 
+           |
+           +------> back to "N > 0?"
